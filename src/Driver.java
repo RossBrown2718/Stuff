@@ -28,7 +28,7 @@ public class Driver {
 		double num = 0;
 		while (scnr.hasNextLine()) {
 			String j = scnr.nextLine();
-			sum += Integer.parseInt(j.substring(j.indexOf(" ") + 1));
+			sum += Double.parseDouble(j.substring(j.indexOf(" ") + 1));
 			num++;
 		} scnr.close();
 		System.out.print("Average of doubles : " + sum / num + "\n");
