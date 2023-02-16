@@ -6,10 +6,11 @@ public class Driver {
 
 	public static void main(String[] args) throws FileNotFoundException {
 			// TODO Auto-generated method stub
-			ints();
-			doubles();
-			intStringDoubles();
-			booleans();
+//			ints();
+//			doubles();
+//			intStringDoubles();
+//			booleans();
+			Babies();
 		}
 	public static void ints() throws FileNotFoundException { //returns average of ints
 		File txt = new File("ints.txt");
@@ -62,6 +63,16 @@ public class Driver {
 			num++;
 		} scnr.close();
 		System.out.print("Average of first column : " + sum1 / num + "\n" + "Average of second column : " + sum2/num + "\n");
+	}
+	public static void Babies() throws FileNotFoundException { //returns average of ints
+		File txt = new File("Popular_Baby_Names.csv");
+		Scanner scnr = new Scanner(txt);
+		int sum = 0;
+		while (scnr.hasNextLine()) {
+			String i = scnr.nextLine();
+			if (i.indexOf("FEMALE") != -1) sum++;
+		} scnr.close();
+		System.out.print("Number of females : " + sum + "\n");
 	}
 
 }
